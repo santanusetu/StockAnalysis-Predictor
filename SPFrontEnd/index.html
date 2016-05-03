@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+
+    <meta name="description" content="Stock Market Predictor App">
+    <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <title>Stock Market Predictor</title>
+
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/calendar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/icons.css" rel="stylesheet">
+    <link href="css/generics.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/timeline.css" rel="stylesheet">
+
+    <link href="css/stock.css" rel="stylesheet">
+
+</head>
+
+
+<body id="skin-blur-violate" ng-app="stockApp" ng-controller="stockController">
+
+
+<!--header start-->
+<header id="header">
+
+    <div><h2 style="margin-left: 2%;color:#c7ddef;"><strong>Stock Market Predictor</strong></h2>
+    </div>
+
+</header>
+<!--End of Header-->
+
+<div class="clearfix"></div>
+
+
+
+<section id="main" class="p-relative" role="main">
+
+    <!-- Content -->
+    <section id="content" class="container">
+
+        <hr class="whiter"/>
+
+
+        <!-- Quick Stats BLOCKS -->
+        <div class="block-area" style="padding-bottom: 10px">
+            <div class="row">
+
+                <div class="col-md-4 col-md-6">
+                    <div class="tile quick-stats">
+                        <div id="stats-line-2" class="pull-left"></div>
+                        <div class="data">
+                            <h2 data-value="98">6</h2>
+                            <small>Stocks Going Up</small>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-md-6">
+                    <div class="tile quick-stats media">
+                        <div id="stats-line-3" class="pull-left"></div>
+                        <div class="media-body">
+                            <h2 data-value="1452">2</h2>
+                            <small>Stocks Going Down</small>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="tile quick-stats media">
+                        <div id="stats-line" class="pull-left"></div>
+                        <div class="media-body">
+                            <h2 data-value="29356">55%</h2>
+                            <small>Accuracy Level Today</small>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--END OF BLOCKS-->
+
+
+        <hr class="whiter"/>
+
+
+        <!-- Main STOCK DETAILS DISPLAY BLOCK -->
+
+        <div class="block-area">
+            <div class="row">
+                <div class="col-md-6" style="background: rgba(0,0,0,0.25)">
+
+                    <strong class="col-md-12" style="align-content: center"> Predicted Forecast of Stocks</strong>
+
+                        <a ng-repeat="stock1 in stocks1" >
+                        <div ng-click="showDynamoGraph(stock1.compName)" class="panel panel-default col-md-11"
+                             style="background: rgba(0,0,0,0.5); margin-top: 2%; margin-botton: 1%; margin-left: 4%; margin-right: 4%;
+                         height: 110px;">
+                            <div class="panel-body col-md-6">
+                                <h3>{{stock1.compName}}</h3>
+                                <h4 class="predict" style="color: #5cb85c">{{stock1.prediction}}</h4>
+                            </div>
+                            <div class="panel-body col-md-6" style="margin-top: 1% ">
+                                <h5 class="predictamount">By {{stock1.predictAmount *10}} %</h5>
+                                <h5>Model Accuracy {{stock1.accuracy}}%</h5>
+                            </div>
+                        </div>
+                        </a>
+
+                </div>
+                <div class="col-md-6" style="background: rgba(0,0,0,0.25)">
+
+                    <strong class="col-md-12" style="align-content: center"> Predicted Forecast of Stocks</strong>
+                   <a ng-repeat="stock2 in stocks2" >
+
+                        <div ng-click="showDynamoGraph(stock2.compName)" class="panel panel-default col-md-11"
+                             style="background: rgba(0,0,0,0.5); margin-top: 2%; margin-botton: 1%; margin-left: 4%; margin-right: 4%;
+                         height: 110px;" >
+                            <div class="panel-body col-md-6">
+                                <h3>{{stock2.compName}}</h3>
+                                <h4 class="predict" style="color: #5cb85c">{{stock2.prediction}}</h4>
+                            </div>
+                            <div class="panel-body col-md-6" style="margin-top: 1% ">
+                                <h5 class="predictamount">By {{stock2.predictAmount *10}} %</h5>
+                                <h5>Model Accuracy {{stock2.accuracy}}%</h5>
+                            </div>
+                        </div>
+                   </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <script>
+
+        </script>
+        <!--MAIN DETAILS END-->
+
+
+        <!--CHART STARTS-->
+        <div class="row">
+            <!-- Main Chart BLOCK -->
+            <!--LINE CHART START-->
+            <div class="row col-md-10"
+                 style=" background: rgba(0,0,0,0.25); margin-top: 4%; margin-left: 8%; margin-right: 5%;
+                         margin-bottom: 4%">
+                <span>Charts</span>
+
+                <div class="tile">
+                    <h2 class="tile-title">Cisco Line Chart</h2>
+
+                    <div class="p-10">
+                        <div id="line-chart" class="main-chart" style="height: 300px"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--CHARTS BLOCK END-->
+
+
+            <div class="clearfix"></div>
+        </div>
+
+
+
+        <!-- NewsFeeds BLOCK-->
+        <div class="col-md-4">
+            <h2 class="tile-title">
+                News Feeds
+            </h2>
+
+            <div class="s-widget-body">
+                <div id="">
+
+                    <ul ng-repeat="feed in newsFeed">
+                        <li><a href="#">{{feed}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--NewsFeeds BLOCK END-->
+
+        <!-- Calendar BLOCK-->
+        <div class="col-md-4">
+            <div id="sidebar-calendar"></div>
+        </div>
+        <!--Calendar BLOCK END-->
+        </div>
+
+
+    </section>
+
+    <!-- Older IE Message -->
+    <!--[if lt IE 9]>
+    <div class="ie-block">
+        <h1 class="Ops">Ooops!</h1>
+        <p>You are using an outdated version of Internet Explorer, upgrade to any of the following web browser in order
+            to access the maximum functionality of this website. </p>
+        <ul class="browsers">
+            <li>
+                <a href="https://www.google.com/intl/en/chrome/browser/">
+                    <img src="img/browsers/chrome.png" alt="">
+                    <div>Google Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.mozilla.org/en-US/firefox/new/">
+                    <img src="img/browsers/firefox.png" alt="">
+                    <div>Mozilla Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com/computer/windows">
+                    <img src="img/browsers/opera.png" alt="">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://safari.en.softonic.com/">
+                    <img src="img/browsers/safari.png" alt="">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/downloads/ie-10/worldwide-languages">
+                    <img src="img/browsers/ie.png" alt="">
+                    <div>Internet Explorer(New)</div>
+                </a>
+            </li>
+        </ul>
+        <p>Upgrade your browser for a Safer and Faster web experience. <br/>Thank you for your patience...</p>
+    </div>
+    <![endif]-->
+</section>
+
+<!-- Javascript Libraries -->
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script> <!-- jQuery Library -->
+<script src="js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script src="js/jquery.easing.1.3.js"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Charts -->
+<script src="js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+<script src="js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+<script src="js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
+
+<script src="js/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
+<script src="js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
+<script src="js/charts.js"></script> <!-- All the above chart related functions -->
+
+<!-- Map -->
+<script src="js/maps/jvectormap.min.js"></script> <!-- jVectorMap main library -->
+<script src="js/maps/usa.js"></script> <!-- USA Map for jVectorMap -->
+
+<!--  Form Related -->
+<script src="js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
+
+<!-- UX -->
+<script src="js/scroll.min.js"></script> <!-- Custom Scrollbar -->
+
+<!-- Other -->
+<script src="js/calendar.min.js"></script> <!-- Calendar -->
+<script src="js/feeds.min.js"></script> <!-- News Feeds -->
+
+
+<!-- All JS functions -->
+<script src="js/functions.js"></script>
+</body>
+</html>
