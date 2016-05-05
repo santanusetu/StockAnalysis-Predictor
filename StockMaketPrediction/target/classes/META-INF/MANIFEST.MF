@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: StockMaketPrediction
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.stockmaketprediction
+Build-Jdk: 1.7.0_79
+Built-By: santanuchakraborty
+Created-By: Maven Integration for Eclipse
+

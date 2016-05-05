@@ -1,0 +1,39 @@
+#skin-blur-violate {
+    background-image: url(../image/body/violate.jpg);
+}
+
+.body {
+    width: 100%;
+    margin: 0;
+    color: #FFFFD7;
+}
+
+.dropdown-menu {
+    min-width: 257px !important;
+}
+
+/*.row{*/
+    /*background-color: rgba(245, 245, 245, 0.4);*/
+/*}*/
+
+
+.tile  {
+    background: rgba(0,0,0,0.35);
+}
+
+.quick-stats {
+    padding: 13px 0 0 0;
+    height: 120px;
+    overflow: hidden;
+    margin-bottom: 1px;
+}
+
+
+/* Logo */
+.logo {
+    height: 80px;
+    text-align: left;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.50);
+}
+
